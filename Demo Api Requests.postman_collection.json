@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "617c5c44-587e-4012-bd53-77816e4ca257",
+		"name": "Demo Api Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18835052"
+	},
+	"item": [
+		{
+			"name": "Basic Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/weatherforecast",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"weatherforecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basic Get with arguments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/weatherforecast/anotherPathElement/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"weatherforecast",
+						"anotherPathElement",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basic Get with arguments from query and route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/weatherforecast/anotherPathElement/5?exampleArg=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"weatherforecast",
+						"anotherPathElement",
+						"5"
+					],
+					"query": [
+						{
+							"key": "exampleArg",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basic Post from body",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"myExampleString\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/weatherforecast",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"weatherforecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basic Post with custom status code return",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/weatherforecast/anotherResultType/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"weatherforecast",
+						"anotherResultType",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excercise Get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/weatherforecast/getexcercise?results=2&minTemp=5&maxTemp=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"weatherforecast",
+						"getexcercise"
+					],
+					"query": [
+						{
+							"key": "results",
+							"value": "2"
+						},
+						{
+							"key": "minTemp",
+							"value": "5"
+						},
+						{
+							"key": "maxTemp",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post /generate/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"MinTemp\": 10,\r\n    \"MaxTemp\": 30\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/weatherforecast/generate/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"weatherforecast",
+						"generate",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET libraries",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiICIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik1hbmFnZXIiLCJEYXRlT2ZCaXJ0aCI6IjE5ODUtMDUtMDYiLCJOYXRpb25hbGl0eSI6Ikl0YWxpYW4iLCJuYmYiOjE2OTE1MTE3OTcsImV4cCI6MTY5MjgwNzc5NywiaXNzIjoiaHR0cDovL0RlbW9SRVNUV2ViQXBpLmNvbSIsImF1ZCI6Imh0dHA6Ly9EZW1vUkVTVFdlYkFwaS5jb20ifQ.uU3spEPAkmc25kSdlXIs6FqnuR-KG69gU8CkT-aIUEE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/api/library?SearchPhrase=l&PageSize=1&PageNumber=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"library"
+					],
+					"query": [
+						{
+							"key": "SearchPhrase",
+							"value": "l"
+						},
+						{
+							"key": "PageSize",
+							"value": "1"
+						},
+						{
+							"key": "PageNumber",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get library by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/library/24",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"library",
+						"24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST add library",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Name\" : \"Biblioteka Powiatowa\",\r\n \"Description\" : \"Powiatowa biblioteka w Naleczowie\", \r\n \"Category\" : \"Szkolna\",\r\n  \"HasEbooks\" : true,\r\n  \"ContactEmail\" : \"bib_naleczow@wp.pl\",\r\n  \"ContactNumber\" : \"500-899-182\",\r\n  \"City\" : \"Naleczow\",\r\n  \"Street\" : \"Gorzowska\",\r\n  \"PostalCode\" : \"55-600\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/library",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"library"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE remove library by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/library/263432423",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"library",
+						"263432423"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"Name\" : \"Library of Santa Fe\",\r\n\"Description\" : \"Public City Library\",\r\n\"HasEbooks\" : true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/library/25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"library",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST add book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiICIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik1hbmFnZXIiLCJEYXRlT2ZCaXJ0aCI6IjE5ODUtMDUtMDYiLCJOYXRpb25hbGl0eSI6Ikl0YWxpYW4iLCJuYmYiOjE2OTE1MDgzMjEsImV4cCI6MTY5MjgwNDMyMSwiaXNzIjoiaHR0cDovL0RlbW9SRVNUV2ViQXBpLmNvbSIsImF1ZCI6Imh0dHA6Ly9EZW1vUkVTVFdlYkFwaS5jb20ifQ.qn1UU1nVn3lVe7gjZLJJ0MehAvE3uc5hV9ULvdrIUuc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Title\" : \"New World 2\",\r\n\"Description\" : \"Lorem ipsum\",\r\n\"Author\" : \"Tadeusz Norek\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api//library/21/book/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"",
+						"library",
+						"21",
+						"book",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all books in library",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/library/21/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"library",
+						"21",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET book by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/library/21/book/21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"library",
+						"21",
+						"book",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST new User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Email\" : \"test@test.pl\",\r\n \"Password\" : \"password123\",\r\n \"Nationality\" : \"Italian\",\r\n \"dateOfBirth\" : \"1985-05-06\",\r\n \"ConfirmPassword\" : \"password123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/account/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"account",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Email\" : \"manager1@test.pl\",\r\n \"Password\" : \"password123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/account/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET get libraries with authorization token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjgiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiICIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJEYXRlT2ZCaXJ0aCI6IjE5ODUtMDUtMDYiLCJOYXRpb25hbGl0eSI6Ikl0YWxpYW4iLCJuYmYiOjE2OTE0MjQxMTQsImV4cCI6MTY5MjcyMDExNCwiaXNzIjoiaHR0cDovL0RlbW9SRVNUV2ViQXBpLmNvbSIsImF1ZCI6Imh0dHA6Ly9EZW1vUkVTVFdlYkFwaS5jb20ifQ.SQzLNpvXWctNTstGX9caBOOY9wQ5Kkt3k6ka7zz2nd8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/api/library",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"library"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get static file",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjkiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiICIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik1hbmFnZXIiLCJEYXRlT2ZCaXJ0aCI6IjE5ODUtMDUtMDYiLCJOYXRpb25hbGl0eSI6Ikl0YWxpYW4iLCJuYmYiOjE2OTE1OTY4NjUsImV4cCI6MTY5Mjg5Mjg2NSwiaXNzIjoiaHR0cDovL0RlbW9SRVNUV2ViQXBpLmNvbSIsImF1ZCI6Imh0dHA6Ly9EZW1vUkVTVFdlYkFwaS5jb20ifQ.ZGutprAuHEC_x95bPl5tMo2Z6Q4AZjJ0NYUkTbbAksw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5001/file?fileName=private-file.txt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"file"
+					],
+					"query": [
+						{
+							"key": "fileName",
+							"value": "private-file.txt"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
